@@ -12,6 +12,7 @@
 		051BC75524F7B6A60066B100 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 051BC75424F7B6A60066B100 /* Assets.xcassets */; };
 		051BC75824F7B6A60066B100 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 051BC75624F7B6A60066B100 /* LaunchScreen.storyboard */; };
 		051BC76624F7BA780066B100 /* HomeViewCntroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051BC76524F7BA770066B100 /* HomeViewCntroller.swift */; };
+		051BC76924F7BCC10066B100 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051BC76824F7BCC10066B100 /* TabController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		051BC75724F7B6A60066B100 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		051BC75924F7B6A70066B100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		051BC76524F7BA770066B100 /* HomeViewCntroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCntroller.swift; sourceTree = "<group>"; };
+		051BC76824F7BCC10066B100 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 		051BC76024F7BA2C0066B100 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				051BC76724F7BCAC0066B100 /* TabController */,
 				051BC76124F7BA340066B100 /* MainScreen */,
 			);
 			path = Screens;
@@ -110,6 +113,14 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		051BC76724F7BCAC0066B100 /* TabController */ = {
+			isa = PBXGroup;
+			children = (
+				051BC76824F7BCC10066B100 /* TabController.swift */,
+			);
+			path = TabController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				051BC74C24F7B6A40066B100 /* AppDelegate.swift in Sources */,
+				051BC76924F7BCC10066B100 /* TabController.swift in Sources */,
 				051BC74E24F7B6A40066B100 /* SceneDelegate.swift in Sources */,
 				051BC76624F7BA780066B100 /* HomeViewCntroller.swift in Sources */,
 			);

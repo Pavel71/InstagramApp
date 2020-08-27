@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   private func root() {
     window = UIWindow(frame: UIScreen.main.bounds)
-    window?.rootViewController = HomeViewController()
+    window?.rootViewController = TabController()
     window?.makeKeyAndVisible()
   }
 

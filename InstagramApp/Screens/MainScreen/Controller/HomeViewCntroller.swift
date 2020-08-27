@@ -17,7 +17,36 @@ class HomeViewController : UIViewController {
     view.backgroundColor = .yellow
   }
   
+  
+  
+  
+  
+  
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // MARK: - SwiftUI provider
 import SwiftUI
