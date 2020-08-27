@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 
 class HomeViewController : UIViewController {
   
@@ -17,14 +17,27 @@ class HomeViewController : UIViewController {
     view.backgroundColor = .yellow
   }
   
-  
-  
-  
-  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    checkUserNotAuth()
+    
+  }
+
   
 }
-
-
+// MARK: Auth Check
+extension HomeViewController {
+  
+  private func checkUserNotAuth() {
+    if Auth.auth().currentUser == nil {
+      let loginVC = LoginViewController()
+      loginVC.modalPresentationStyle = .fullScreen
+      present(loginVC, animated: true, completion: nil)
+    }
+  }
+  
+}
 
 
 

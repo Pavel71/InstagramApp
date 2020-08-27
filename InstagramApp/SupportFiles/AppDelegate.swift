@@ -23,6 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     return true
   }
   
+  private func initServiceLocator() {
+    let locator = ServiceLocator.shared
+    
+    locator.addService(service: DatabaseManger.shared)
+    locator.addService(service: AuthManager.shared)
+  }
+  
   private func root() {
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.rootViewController = TabController()
