@@ -10,7 +10,7 @@ import Foundation
 
 final class DatabaseManager {
   
-  static let shared = DatabaseManger()
+  static let shared = DatabaseManager()
   
   
 }

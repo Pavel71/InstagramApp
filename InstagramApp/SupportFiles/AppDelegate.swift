@@ -26,7 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   private func initServiceLocator() {
     let locator = ServiceLocator.shared
     
-    locator.addService(service: DatabaseManger.shared)
+    locator.addService(service: DatabaseManager.shared)
+    locator.addService(service: StoragManager.shared)
     locator.addService(service: AuthManager.shared)
   }
   
