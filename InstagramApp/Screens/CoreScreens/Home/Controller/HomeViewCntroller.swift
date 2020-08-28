@@ -11,6 +11,9 @@ import FirebaseAuth
 
 class HomeViewController : UIViewController {
   
+  
+  // MARK: - Layfe Cycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -19,6 +22,12 @@ class HomeViewController : UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+    
+    do {
+      try Auth.auth().signOut()
+    } catch {
+      print("Sign out cath")
+    }
     
     checkUserNotAuth()
     

@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     root()
     FirebaseApp.configure()
+    initServiceLocator()
+   
     
     return true
   }
@@ -27,8 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let locator = ServiceLocator.shared
     
     locator.addService(service: DatabaseManager.shared)
-    locator.addService(service: StoragManager.shared)
     locator.addService(service: AuthManager.shared)
+    locator.addService(service: StoragManager.shared)
+    
   }
   
   private func root() {

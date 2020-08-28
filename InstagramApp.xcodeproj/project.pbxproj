@@ -25,6 +25,9 @@
 		05A2CA4324F7E32A00863FF8 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A2CA4224F7E32A00863FF8 /* AuthManager.swift */; };
 		05A2CA4524F7E39700863FF8 /* StoragManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A2CA4424F7E39700863FF8 /* StoragManager.swift */; };
 		05A2CA4724F7F09300863FF8 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A2CA4624F7F09300863FF8 /* UIView+Extensions.swift */; };
+		05A2CA4924F8F69300863FF8 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A2CA4824F8F69300863FF8 /* UIViewController+Extensions.swift */; };
+		05A2CA4B24F8F8ED00863FF8 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A2CA4A24F8F8ED00863FF8 /* UIView+Layout.swift */; };
+		05A2CA4D24F9090900863FF8 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A2CA4C24F9090900863FF8 /* String+Extension.swift */; };
 		A6757FA960A12EB17B1EF5DE /* Pods_InstagramApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1329D1FDFAF43A7B98C7EB /* Pods_InstagramApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +52,9 @@
 		05A2CA4224F7E32A00863FF8 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		05A2CA4424F7E39700863FF8 /* StoragManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoragManager.swift; sourceTree = "<group>"; };
 		05A2CA4624F7F09300863FF8 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		05A2CA4824F8F69300863FF8 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		05A2CA4A24F8F8ED00863FF8 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		05A2CA4C24F9090900863FF8 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		8C1329D1FDFAF43A7B98C7EB /* Pods_InstagramApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0FBB67CA2E4DFB69B924EEA /* Pods-InstagramApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramApp.debug.xcconfig"; path = "Target Support Files/Pods-InstagramApp/Pods-InstagramApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F42801578566ADCF80AA4D3D /* Pods-InstagramApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramApp.release.xcconfig"; path = "Target Support Files/Pods-InstagramApp/Pods-InstagramApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -318,7 +324,10 @@
 		05A2CA3B24F7E1C200863FF8 /* HelpFiles */ = {
 			isa = PBXGroup;
 			children = (
+				05A2CA4A24F8F8ED00863FF8 /* UIView+Layout.swift */,
 				05A2CA4624F7F09300863FF8 /* UIView+Extensions.swift */,
+				05A2CA4824F8F69300863FF8 /* UIViewController+Extensions.swift */,
+				05A2CA4C24F9090900863FF8 /* String+Extension.swift */,
 			);
 			path = HelpFiles;
 			sourceTree = "<group>";
@@ -479,13 +488,16 @@
 				05959D9324F7DE7F00829881 /* RegisterViewController.swift in Sources */,
 				05A2CA4324F7E32A00863FF8 /* AuthManager.swift in Sources */,
 				051BC74C24F7B6A40066B100 /* AppDelegate.swift in Sources */,
+				05A2CA4B24F8F8ED00863FF8 /* UIView+Layout.swift in Sources */,
 				051BC76924F7BCC10066B100 /* TabController.swift in Sources */,
 				051BC77C24F7C4090066B100 /* NotificationViewController.swift in Sources */,
 				051BC77424F7C1570066B100 /* ExploreViewController.swift in Sources */,
 				05A2CA3E24F7E1F500863FF8 /* DatabaseManager.swift in Sources */,
+				05A2CA4D24F9090900863FF8 /* String+Extension.swift in Sources */,
 				05A2CA4524F7E39700863FF8 /* StoragManager.swift in Sources */,
 				051BC78124F7C42E0066B100 /* ProfileViewController.swift in Sources */,
 				051BC78624F7C4520066B100 /* CameraViewController.swift in Sources */,
+				05A2CA4924F8F69300863FF8 /* UIViewController+Extensions.swift in Sources */,
 				05A2CA4724F7F09300863FF8 /* UIView+Extensions.swift in Sources */,
 				051BC74E24F7B6A40066B100 /* SceneDelegate.swift in Sources */,
 				051BC76624F7BA780066B100 /* HomeViewCntroller.swift in Sources */,

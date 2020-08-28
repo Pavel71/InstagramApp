@@ -13,7 +13,8 @@ class LoginViewController: UIViewController {
   
   
   struct Constants {
-    static let cornerRadius : CGFloat = 8.0
+    static let cornerRadius    : CGFloat = 8.0
+    static let textFieldHeight : CGFloat = 52
   }
   
   // MARK: - Views
@@ -84,6 +85,11 @@ class LoginViewController: UIViewController {
     return view
   }()
   
+  
+  // MARK: - Srvices
+  
+  let authManager: AuthManager! = ServiceLocator.shared.getService()
+  
   // MARK: - Lyfecycle
   
   override func viewDidLoad() {
@@ -117,22 +123,22 @@ class LoginViewController: UIViewController {
       x      : 25,
       y      : headerView.bottom + 50,
       width  : view.width - 50,
-      height : 52)
+      height : Constants.textFieldHeight)
     passwordTextfield.frame = .init(
       x      : 25,
       y      : loginTextfield.bottom + 10,
       width  : view.width - 50,
-      height : 52)
+      height : Constants.textFieldHeight)
     loginButton.frame = .init(
       x      : 25,
       y      : passwordTextfield.bottom + 10,
       width  : view.width - 50,
-      height : 52)
+      height : Constants.textFieldHeight)
     createAccountButton.frame = .init(
       x      : 25,
       y      : loginButton.bottom + 10,
       width  : view.width - 50,
-      height : 52)
+      height : Constants.textFieldHeight)
     
     termsButton.frame         = .init(
       x      : 10,
@@ -188,7 +194,30 @@ class LoginViewController: UIViewController {
       login.isEmpty    == false,
       let password = passwordTextfield.text,
       password.isEmpty == false
-      else {return}
+    else {return}
+    
+    // Should Impleneted Login Functionality
+    
+    if  login.contains("@"),login.contains(".") {
+      
+      authManager.loginUser(userName: nil, email: login, password: password) {[weak self] (isSucces) in
+        
+        DispatchQueue.main.async {
+          if isSucces {
+            self?.dismiss(animated: true, completion: nil)
+          } else {
+            self?.showAlert(message: "Can't login")
+          }
+        }
+        
+       
+        
+      }
+      
+      
+    } else { // User Name USer
+      
+    }
     
   }
   
@@ -206,7 +235,8 @@ class LoginViewController: UIViewController {
   
   @objc private func didTapCreateAccountButton(){
     let vc = RegisterViewController()
-    present(vc, animated: true, completion: nil)
+    vc.title = "Create new account"
+    present(UINavigationController(rootViewController: vc), animated: true, completion: nil)
   }
   
   
