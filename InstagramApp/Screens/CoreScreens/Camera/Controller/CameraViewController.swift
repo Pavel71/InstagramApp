@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class CameraViewController: UIViewController {
 
@@ -15,6 +16,11 @@ class CameraViewController: UIViewController {
 
       view.backgroundColor = .blue
     }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.navigationController?.setNavigationBarHidden(true, animated: false)
+  }
     
 
 

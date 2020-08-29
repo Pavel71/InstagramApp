@@ -16,7 +16,7 @@ class TabController: UITabBarController {
     let exploreVC          = createNavController(ExploreViewController(), name: "Explore", imageName: "magnifyingglass")
     let cameraVC           = createNavController(CameraViewController(), name: "Camera", imageName: "plus")
     let profileVC          = createNavController(ProfileViewController(), name: "Profile", imageName: "person")
-    let notificationVC     = createNavController(NotificationViewController(), name: "Notification", imageName: "bell")
+    let notificationVC     = createNavController(NotificationViewController(), name: "Notification", imageName: "heart")
  
     
     viewControllers = [
@@ -24,8 +24,9 @@ class TabController: UITabBarController {
       homeViewController,
       exploreVC,
       cameraVC,
-      profileVC,
-      notificationVC
+      notificationVC,
+      profileVC
+      
     ]
 
     
@@ -34,7 +35,7 @@ class TabController: UITabBarController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    UITabBar.appearance().tintColor = .black
+    UITabBar.appearance().tintColor = .systemBlue
         
   }
 

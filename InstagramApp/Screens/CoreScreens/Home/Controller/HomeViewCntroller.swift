@@ -11,27 +11,40 @@ import FirebaseAuth
 
 class HomeViewController : UIViewController {
   
+  // MARK: - Views
+  
+  
+  private lazy var tableView: UITableView = {
+    let table = UITableView(frame: .zero, style: .plain)
+    table.delegate   = self
+    table.dataSource = self
+    table.register(IGFeedPostTableViewCell.self, forCellReuseIdentifier: IGFeedPostTableViewCell.cellID)
+    return table
+  }()
+  
   
   // MARK: - Layfe Cycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    view.backgroundColor = .yellow
+    view.backgroundColor = .systemBackground
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
-    do {
-      try Auth.auth().signOut()
-    } catch {
-      print("Sign out cath")
-    }
-    
+    setUpViews()
     checkUserNotAuth()
     
   }
+  
+  private func setUpViews() {
+    view.addSubview(tableView)
+    tableView.fillSuperview()
+  }
+  
+  
 
   
 }
@@ -51,8 +64,26 @@ extension HomeViewController {
 
 
 
+// MARK: - Table Delegate DataSource
+extension HomeViewController: UITableViewDelegate,UITableViewDataSource {
+  
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 1
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostTableViewCell.cellID, for: indexPath) as! IGFeedPostTableViewCell
+    
+    return cell
+  }
 
-
+  
+  
+  
+  
+}
 
 
 

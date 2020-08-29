@@ -9,9 +9,26 @@
 import FirebaseStorage
 
 
+// MARK: Storege Model
+
+
+enum UserPostType {
+  case photo,video
+}
+
+struct UserPost {
+  var postType: UserPostType
+}
+
+
 final class StoragManager {
   
   static let shared = StoragManager()
   
-
+  private let bucket = Storage.storage().reference()
+  
+  
+  public func uploadUserPhotoPost(model: UserPost,complation: @escaping ((Result<URL,Error>) -> Void)) {
+    
+  }
 }

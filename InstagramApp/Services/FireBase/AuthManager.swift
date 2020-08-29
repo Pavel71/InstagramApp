@@ -15,6 +15,7 @@ final class AuthManager {
   var dataBaseManager : DatabaseManager! = ServiceLocator.shared.getService()
   
   
+  // MARK: - Register User
   func registerNewUser(userName: String,email: String,password: String,complation: @escaping ((Bool) -> Void)) {
     
     dataBaseManager.canCreateNewUser(userName: userName, email: email, password: password) { canCreate in
@@ -24,16 +25,20 @@ final class AuthManager {
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
           if error != nil {
             complation(false)
+            return
           }
           // Can Insert User to DB
           self.dataBaseManager.insertNewUserToDatabase(userName: userName, email: email) { inserted in
             
+            
             inserted ? complation(true) : complation(false)
+            return
           }
           
         }
       } else { // Can Create
         complation(false)
+        return
       }
       
       
@@ -43,6 +48,7 @@ final class AuthManager {
      
    }
    
+  // MARK: - Login User
   func loginUser(userName:String?,email:String?,password:String,complation:@escaping (Bool) -> Void) {
      
     if let userName = userName {
@@ -58,10 +64,27 @@ final class AuthManager {
         else {return complation(false)}
         
         complation(true)
+        return
       }
+    } else {
+      complation(false)
+      return
     }
     
-    complation(false)
+    
     
    }
+  
+  
+  // MARK: - Sign Out
+  func signOut(complation:@escaping ((Bool) -> Void)) {
+        do {
+          try Auth.auth().signOut()
+          complation(true)
+          return
+        } catch {
+          print("Sigon out er")
+          complation(false)
+        }
+  }
 }

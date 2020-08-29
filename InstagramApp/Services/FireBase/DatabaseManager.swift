@@ -22,6 +22,7 @@ final class DatabaseManager {
   
   func canCreateNewUser(userName: String,email: String,password: String,complation:@escaping ((Bool) -> Void)) {
     complation(true)
+    return
   }
   /// Insert new user
   /// - Parametres
@@ -33,7 +34,7 @@ final class DatabaseManager {
     dataBase.child(email.safeDataBaseKey()).setValue(["username" : userName]) {error,_ in
       
       error == nil ? complation(true) : complation(false)
-      
+      return
     }
   }
   

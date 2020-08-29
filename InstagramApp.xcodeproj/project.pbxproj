@@ -28,6 +28,11 @@
 		05A2CA4924F8F69300863FF8 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A2CA4824F8F69300863FF8 /* UIViewController+Extensions.swift */; };
 		05A2CA4B24F8F8ED00863FF8 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A2CA4A24F8F8ED00863FF8 /* UIView+Layout.swift */; };
 		05A2CA4D24F9090900863FF8 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A2CA4C24F9090900863FF8 /* String+Extension.swift */; };
+		05A2CA4F24F92B3800863FF8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A2CA4E24F92B3800863FF8 /* SettingsViewController.swift */; };
+		05A2CA5224FA6CCC00863FF8 /* IGFeedPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A2CA5124FA6CCC00863FF8 /* IGFeedPostTableViewCell.swift */; };
+		05A2CA5424FA6E5200863FF8 /* IGHeaderPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A2CA5324FA6E5200863FF8 /* IGHeaderPostCell.swift */; };
+		05A2CA5624FA6E6900863FF8 /* IGActionsPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A2CA5524FA6E6900863FF8 /* IGActionsPostCell.swift */; };
+		05A2CA5824FA6E8F00863FF8 /* IGGeneralPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A2CA5724FA6E8F00863FF8 /* IGGeneralPostCell.swift */; };
 		A6757FA960A12EB17B1EF5DE /* Pods_InstagramApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1329D1FDFAF43A7B98C7EB /* Pods_InstagramApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +60,11 @@
 		05A2CA4824F8F69300863FF8 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		05A2CA4A24F8F8ED00863FF8 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		05A2CA4C24F9090900863FF8 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		05A2CA4E24F92B3800863FF8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		05A2CA5124FA6CCC00863FF8 /* IGFeedPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostTableViewCell.swift; sourceTree = "<group>"; };
+		05A2CA5324FA6E5200863FF8 /* IGHeaderPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGHeaderPostCell.swift; sourceTree = "<group>"; };
+		05A2CA5524FA6E6900863FF8 /* IGActionsPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGActionsPostCell.swift; sourceTree = "<group>"; };
+		05A2CA5724FA6E8F00863FF8 /* IGGeneralPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGGeneralPostCell.swift; sourceTree = "<group>"; };
 		8C1329D1FDFAF43A7B98C7EB /* Pods_InstagramApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0FBB67CA2E4DFB69B924EEA /* Pods-InstagramApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramApp.debug.xcconfig"; path = "Target Support Files/Pods-InstagramApp/Pods-InstagramApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F42801578566ADCF80AA4D3D /* Pods-InstagramApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramApp.release.xcconfig"; path = "Target Support Files/Pods-InstagramApp/Pods-InstagramApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +154,7 @@
 		051BC76324F7BA420066B100 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				05A2CA5024FA6CA800863FF8 /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -308,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				05959D8F24F7DE6400829881 /* OnBoarding */,
+				05A2CA4E24F92B3800863FF8 /* SettingsViewController.swift */,
 			);
 			path = OtherScreens;
 			sourceTree = "<group>";
@@ -349,6 +361,17 @@
 				05A2CA4424F7E39700863FF8 /* StoragManager.swift */,
 			);
 			path = FireBase;
+			sourceTree = "<group>";
+		};
+		05A2CA5024FA6CA800863FF8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				05A2CA5124FA6CCC00863FF8 /* IGFeedPostTableViewCell.swift */,
+				05A2CA5324FA6E5200863FF8 /* IGHeaderPostCell.swift */,
+				05A2CA5524FA6E6900863FF8 /* IGActionsPostCell.swift */,
+				05A2CA5724FA6E8F00863FF8 /* IGGeneralPostCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		ADCCAF0365E87215AF6E73E7 /* Frameworks */ = {
@@ -488,6 +511,8 @@
 				05959D9324F7DE7F00829881 /* RegisterViewController.swift in Sources */,
 				05A2CA4324F7E32A00863FF8 /* AuthManager.swift in Sources */,
 				051BC74C24F7B6A40066B100 /* AppDelegate.swift in Sources */,
+				05A2CA5624FA6E6900863FF8 /* IGActionsPostCell.swift in Sources */,
+				05A2CA4F24F92B3800863FF8 /* SettingsViewController.swift in Sources */,
 				05A2CA4B24F8F8ED00863FF8 /* UIView+Layout.swift in Sources */,
 				051BC76924F7BCC10066B100 /* TabController.swift in Sources */,
 				051BC77C24F7C4090066B100 /* NotificationViewController.swift in Sources */,
@@ -495,6 +520,9 @@
 				05A2CA3E24F7E1F500863FF8 /* DatabaseManager.swift in Sources */,
 				05A2CA4D24F9090900863FF8 /* String+Extension.swift in Sources */,
 				05A2CA4524F7E39700863FF8 /* StoragManager.swift in Sources */,
+				05A2CA5224FA6CCC00863FF8 /* IGFeedPostTableViewCell.swift in Sources */,
+				05A2CA5824FA6E8F00863FF8 /* IGGeneralPostCell.swift in Sources */,
+				05A2CA5424FA6E5200863FF8 /* IGHeaderPostCell.swift in Sources */,
 				051BC78124F7C42E0066B100 /* ProfileViewController.swift in Sources */,
 				051BC78624F7C4520066B100 /* CameraViewController.swift in Sources */,
 				05A2CA4924F8F69300863FF8 /* UIViewController+Extensions.swift in Sources */,
