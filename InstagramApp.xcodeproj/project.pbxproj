@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		050EC7AA24FCFF7A000E3E9B /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050EC7A924FCFF7A000E3E9B /* PhotoCollectionViewCell.swift */; };
+		050EC7AD24FCFFCF000E3E9B /* ProfilreCollectioViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050EC7AC24FCFFCF000E3E9B /* ProfilreCollectioViewHeader.swift */; };
+		050EC7AF24FD004C000E3E9B /* ProfileTabsCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050EC7AE24FD004C000E3E9B /* ProfileTabsCollectionReusableView.swift */; };
+		050EC7B124FD21EF000E3E9B /* ProfileModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050EC7B024FD21EF000E3E9B /* ProfileModels.swift */; };
 		051BC74C24F7B6A40066B100 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051BC74B24F7B6A40066B100 /* AppDelegate.swift */; };
 		051BC74E24F7B6A40066B100 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051BC74D24F7B6A40066B100 /* SceneDelegate.swift */; };
 		051BC75524F7B6A60066B100 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 051BC75424F7B6A60066B100 /* Assets.xcassets */; };
@@ -39,6 +43,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		050EC7A924FCFF7A000E3E9B /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		050EC7AC24FCFFCF000E3E9B /* ProfilreCollectioViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilreCollectioViewHeader.swift; sourceTree = "<group>"; };
+		050EC7AE24FD004C000E3E9B /* ProfileTabsCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabsCollectionReusableView.swift; sourceTree = "<group>"; };
+		050EC7B024FD21EF000E3E9B /* ProfileModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModels.swift; sourceTree = "<group>"; };
 		051BC74824F7B6A40066B100 /* InstagramApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		051BC74B24F7B6A40066B100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		051BC74D24F7B6A40066B100 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +94,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		050EC7A824FCFF53000E3E9B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				050EC7A924FCFF7A000E3E9B /* PhotoCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		050EC7AB24FCFFBD000E3E9B /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				050EC7AC24FCFFCF000E3E9B /* ProfilreCollectioViewHeader.swift */,
+				050EC7AE24FD004C000E3E9B /* ProfileTabsCollectionReusableView.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		051BC73F24F7B6A40066B100 = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +290,8 @@
 		051BC77D24F7C4150066B100 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				050EC7AB24FCFFBD000E3E9B /* Header */,
+				050EC7A824FCFF53000E3E9B /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,6 +299,7 @@
 		051BC77E24F7C41B0066B100 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				050EC7B024FD21EF000E3E9B /* ProfileModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -521,14 +549,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				05A2CA4024F7E27400863FF8 /* ServiceLocator.swift in Sources */,
+				050EC7AA24FCFF7A000E3E9B /* PhotoCollectionViewCell.swift in Sources */,
 				05959D9124F7DE7400829881 /* LoginViewController.swift in Sources */,
 				05959D9324F7DE7F00829881 /* RegisterViewController.swift in Sources */,
 				05A2CA5D24FCF56C00863FF8 /* FormProfileCell.swift in Sources */,
+				050EC7AD24FCFFCF000E3E9B /* ProfilreCollectioViewHeader.swift in Sources */,
 				05A2CA4324F7E32A00863FF8 /* AuthManager.swift in Sources */,
 				051BC74C24F7B6A40066B100 /* AppDelegate.swift in Sources */,
 				05A2CA5624FA6E6900863FF8 /* IGActionsPostCell.swift in Sources */,
 				05A2CA4F24F92B3800863FF8 /* SettingsViewController.swift in Sources */,
 				05A2CA4B24F8F8ED00863FF8 /* UIView+Layout.swift in Sources */,
+				050EC7AF24FD004C000E3E9B /* ProfileTabsCollectionReusableView.swift in Sources */,
 				05A2CA5A24FA79C200863FF8 /* EditProfileViewController.swift in Sources */,
 				051BC76924F7BCC10066B100 /* TabController.swift in Sources */,
 				051BC77C24F7C4090066B100 /* NotificationViewController.swift in Sources */,
@@ -542,6 +573,7 @@
 				051BC78124F7C42E0066B100 /* ProfileViewController.swift in Sources */,
 				051BC78624F7C4520066B100 /* CameraViewController.swift in Sources */,
 				05A2CA4924F8F69300863FF8 /* UIViewController+Extensions.swift in Sources */,
+				050EC7B124FD21EF000E3E9B /* ProfileModels.swift in Sources */,
 				05A2CA4724F7F09300863FF8 /* UIView+Extensions.swift in Sources */,
 				051BC74E24F7B6A40066B100 /* SceneDelegate.swift in Sources */,
 				051BC76624F7BA780066B100 /* HomeViewCntroller.swift in Sources */,

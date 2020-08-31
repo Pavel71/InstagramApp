@@ -22,10 +22,12 @@ class EditProfileViewController: UIViewController {
   
   private lazy var tableView : UITableView = {
     let table = UITableView(frame: .zero, style: .grouped)
-    table.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
-    
-    table.delegate   = self
-    table.dataSource = self
+    table.register(FormProfileCell.self, forCellReuseIdentifier: FormProfileCell.cellId)
+    table.rowHeight          = UITableView.automaticDimension
+    table.estimatedRowHeight = 52
+    table.delegate           = self
+    table.dataSource         = self
+    table.keyboardDismissMode = .interactive
     return table
   }()
   
@@ -42,8 +44,6 @@ class EditProfileViewController: UIViewController {
     b.tintColor          = .label
     b.clipsToBounds      = true
     b.layer.cornerRadius = profileButtonSize / 2.0
-//    b.layer.borderWidth  = 1
-//    b.layer.borderColor  = UIColor.secondarySystemBackground.cgColor
     b.addTarget(self, action: #selector(didTapChangeProfielPicture), for: .touchUpInside)
     return b
   }()
@@ -58,7 +58,7 @@ class EditProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      title = "Edit Profile"
+     
       view.backgroundColor = .systemBackground
       setUpTableView()
       configureHeaderView()
@@ -112,6 +112,13 @@ extension EditProfileViewController {
   }
 }
 
+// MARK: - Cell Clousers
+extension EditProfileViewController {
+  
+  func updateTextField(model: EditProfileFormModel) {
+    print("Update CLouser",model.value ?? nil)
+  }
+}
 // MARK: - TableView Delegate DataSource
 extension EditProfileViewController: UITableViewDelegate,UITableViewDataSource {
   
@@ -124,9 +131,12 @@ extension EditProfileViewController: UITableViewDelegate,UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: FormProfileCell.cellId, for: indexPath) as! FormProfileCell
     let model = models[indexPath.section][indexPath.row]
-    cell.textLabel?.text = model.label
+    cell.configure(with: model)
+    cell.didUpdateTextField = {[weak self] model in
+      self?.updateTextField(model: model)
+    }
     return cell
   }
   
@@ -137,18 +147,17 @@ extension EditProfileViewController: UITableViewDelegate,UITableViewDataSource {
     
     return "Private Information"
   }
-  
+
   
 }
 
 // MARK: - Configure Nav Bar
 extension EditProfileViewController {
   private func configureNavBar() {
-    navigationItem.rightBarButtonItems = [
-    
-    UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(handleSaveButton)),
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(handleSaveButton))
+    navigationItem.leftBarButtonItem =
     UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(handleCancelButton))
-    ]
+     title = "Edit Profile"
      
    }
    

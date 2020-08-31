@@ -175,6 +175,7 @@ extension SettingsViewController {
   private func didTapEditProfile() {
     let vc = EditProfileViewController()
     let navVc = UINavigationController(rootViewController: vc)
+    navVc.modalPresentationStyle = .fullScreen
     present(navVc, animated: true, completion: nil)
   }
   // MARK: - Invite Friends

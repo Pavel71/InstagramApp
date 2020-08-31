@@ -12,13 +12,6 @@ import FirebaseStorage
 // MARK: Storege Model
 
 
-enum UserPostType {
-  case photo,video
-}
-
-struct UserPost {
-  var postType: UserPostType
-}
 
 
 final class StoragManager {
