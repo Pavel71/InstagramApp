@@ -13,6 +13,11 @@ import UIKit
 final class ProfileViewController: UIViewController {
   
   
+  enum Section: Int, CaseIterable {
+    case profile
+    case tabs
+  }
+  
   // MARK: - Views
   
   private lazy var collectionView : UICollectionView = {
@@ -27,7 +32,7 @@ final class ProfileViewController: UIViewController {
     let size               = (view.width/3) - (itemSpacing*4)
     
     layout.itemSize        = .init(width: size, height: size)
-    layout.sectionInset    = .init(top: 5, left: 5, bottom: 5, right: 5)
+    layout.sectionInset    = .init(top: 0, left: 5, bottom: 0, right: 5)
     
     let collectionView  = UICollectionView(frame: .zero, collectionViewLayout: layout)
     collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.cellID)
@@ -41,6 +46,14 @@ final class ProfileViewController: UIViewController {
     return collectionView
   }()
   
+  // MARK: - Model
+  
+  var userPosts:[UserPost]  = []
+  
+  
+  
+  
+  // MARK: - Lyfe Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     setUpCollectionView()
@@ -62,11 +75,25 @@ final class ProfileViewController: UIViewController {
 // MARK: -  CollectionView Delegate DataSource
 extension ProfileViewController: UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UICollectionViewDelegate {
   
+  
+  func numberOfSections(in collectionView: UICollectionView) -> Int {
+    return Section.allCases.count
+  }
+  
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 30
+    
+    guard let section = Section(rawValue: section) else {return 0}
+    switch section {
+    case .profile:
+      return 0
+    case .tabs:
+      return 30
+    }
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    
+//    let model = userPosts[indexPath.row]
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.cellID, for: indexPath) as! PhotoCollectionViewCell
 //    cell.configure(with: nil)
     return cell
@@ -74,11 +101,58 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout,UICollection
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     collectionView.deselectItem(at: indexPath, animated: true)
+    
+//    let model = userPosts[indexPath.row]
+    let vc = PostViewController()
+    vc.navigationItem.largeTitleDisplayMode = .never
+    navigationController?.pushViewController(vc, animated: true)
+    
+  }
+
+  
+  // MARK: - Header
+  
+  func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    
+    guard kind == UICollectionView.elementKindSectionHeader else {
+      return UICollectionReusableView()
+    }
+    
+    guard let section = Section(rawValue: indexPath.section) else {return UICollectionReusableView()}
+    let header : UICollectionReusableView
+    
+    switch section {
+    case .profile :
+      header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfilreCollectioViewHeader.identifier, for: indexPath) as! ProfilreCollectioViewHeader
+      setProfileHeaderClouser(header: header as! ProfilreCollectioViewHeader)
+    case .tabs    :
+      header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileTabsCollectionReusableView.identifier, for: indexPath) as! ProfileTabsCollectionReusableView
+    }
+    
+    
+    
+    return header
   }
   
-//  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//    return .init(width: 100, height: 100)
-//  }
+  
+  // MARK: Header Height
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    
+    guard let section = Section(rawValue: section) else {return .zero}
+    
+    switch section {
+    case .profile:
+      return .init(width: collectionView.width, height: collectionView.height / 4)
+    case .tabs:
+      return .init(width: collectionView.width, height: 100)
+    }
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    guard let section = Section(rawValue: section) else {return .zero}
+    
+    return section == .tabs ? UIEdgeInsets(top: 10, left: 2, bottom: 0, right: 2) : .zero
+  }
   
 
 }
@@ -93,5 +167,38 @@ extension ProfileViewController {
   @objc private func didTapGearButton() {
     let vc = SettingsViewController()
     navigationController?.pushViewController(vc, animated: true)
+  }
+}
+
+// MARK: Profile Header Clouser
+extension ProfileViewController {
+  
+  func setProfileHeaderClouser(header: ProfilreCollectioViewHeader) {
+    
+    header.didTapeditProfileButtonClouser = {[weak self] in
+      print("Edit Profile")
+      let vc = UINavigationController(rootViewController:EditProfileViewController())
+      self?.present(vc, animated: true, completion: nil)
+    }
+    header.didTapfollowingButtonClouser = {[weak self] in
+      
+      let vc = ListViewController()
+      vc.title = "Following"
+      vc.navigationItem.largeTitleDisplayMode = .never
+      
+      self?.navigationController?.pushViewController(vc, animated: true)
+    }
+    header.didTapPostButtonClouser      = {[weak self] in
+      
+      self?.collectionView.scrollToItem(at: .init(row: 0, section: 1), at: .top, animated: true)
+    }
+    header.didTapfollowersButtonClouser = {[weak self] in
+      
+      let vc = ListViewController()
+      vc.title = "Followers"
+      vc.navigationItem.largeTitleDisplayMode = .never
+      
+      self?.navigationController?.pushViewController(vc, animated: true)
+    }
   }
 }

@@ -14,6 +14,25 @@ enum UserPostType {
   case photo,video
 }
 
+enum Gender {
+  case male,female
+}
+
+struct UserCount {
+  let following : Int
+  let followers : Int
+  let post      : Int
+}
+
+struct User {
+  let userName  : String
+  let name      : (first: String,last: String)
+  let birthDate : Date
+  let gender    : Gender
+  let counts    : UserCount
+  let joinDate  : Date
+}
+
 struct UserPost {
   var postType          : UserPostType
   let thumbNailImageURL : URL

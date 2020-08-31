@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 
 final class PhotoCollectionViewCell: UICollectionViewCell {
@@ -21,6 +22,7 @@ final class PhotoCollectionViewCell: UICollectionViewCell {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
+    contentView.backgroundColor = .secondarySystemBackground
     accessibilityLabel = "User post Image"
     accessibilityHint  = "Doubple tap to open post"
     setUpViews()
@@ -50,8 +52,11 @@ extension PhotoCollectionViewCell {
 // MARK: - Configure Cell
 
 extension PhotoCollectionViewCell {
+  
   func configure(with model: UserPost) {
-    let thumbNailUrl = model.thumbNailImage
-    photoImageView.image = model
+    let thumbNailUrl = model.thumbNailImageURL
+    photoImageView.sd_setImage(with: thumbNailUrl, completed: nil)
   }
+  
+  
 }
