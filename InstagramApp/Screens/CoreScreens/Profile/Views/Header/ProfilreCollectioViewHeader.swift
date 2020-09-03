@@ -73,7 +73,7 @@ class ProfilreCollectioViewHeader : UICollectionReusableView {
   }()
   private lazy var biolabel : UILabel = {
     var l = UILabel()
-    l.text = "SOme sheet asdsad  "
+    l.text = "SOme sheet asdsad "
     l.numberOfLines = 0
     l.sizeToFit()
     l.textColor = .label
@@ -120,12 +120,24 @@ class ProfilreCollectioViewHeader : UICollectionReusableView {
   private lazy var bottomVstack : UIStackView = {
     let vStack = UIStackView(arrangedSubviews: [
       namelabel,
+      bioLabelVstack
+    ])
+    vStack.distribution = .fill
+    vStack.axis         = .vertical
+    vStack.alignment    = .fill
+//    vStack.spacing      = 5
+    return vStack
+  }()
+  
+  private lazy var bioLabelVstack: UIStackView = {
+    let vStack = UIStackView(arrangedSubviews: [
+      
       biolabel
     ])
     vStack.distribution = .fill
     vStack.axis         = .vertical
     vStack.alignment    = .fill
-    vStack.spacing      = 5
+    
     return vStack
   }()
   
@@ -186,16 +198,14 @@ extension ProfilreCollectioViewHeader {
   override func layoutSubviews() {
     super.layoutSubviews()
     
-    let imageViewSize = (width / 4).rounded(.toNearestOrAwayFromZero)
-    let topHstackHeight = imageViewSize
-    let bottomVstackheight = height - topHstackHeight
+    let topHstackHeight = (height * 0.5)
     
-    profilePhotoImageView.constrainWidth(constant: imageViewSize)
+    
+    profilePhotoImageView.constrainWidth(constant: topHstackHeight)
     topHStack.constrainHeight(constant: topHstackHeight)
-    profilePhotoImageView.layer.cornerRadius = imageViewSize / 2.0
+    profilePhotoImageView.layer.cornerRadius = topHstackHeight / 2.0
     
     topButtonHstack.constrainHeight(constant: topHstackHeight * 0.55)
-    namelabel.constrainHeight(constant: bottomVstackheight * 0.2)
     divider.constrainWidth(constant: 1)
   }
 }

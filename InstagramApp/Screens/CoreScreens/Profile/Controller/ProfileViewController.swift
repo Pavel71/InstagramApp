@@ -127,6 +127,7 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout,UICollection
       setProfileHeaderClouser(header: header as! ProfilreCollectioViewHeader)
     case .tabs    :
       header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileTabsCollectionReusableView.identifier, for: indexPath) as! ProfileTabsCollectionReusableView
+      setTabsHeaderClousers(header: header as! ProfileTabsCollectionReusableView)
     }
     
     
@@ -144,7 +145,7 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout,UICollection
     case .profile:
       return .init(width: collectionView.width, height: collectionView.height / 4)
     case .tabs:
-      return .init(width: collectionView.width, height: 100)
+      return .init(width: collectionView.width, height: 50)
     }
   }
   
@@ -170,8 +171,21 @@ extension ProfileViewController {
   }
 }
 
-// MARK: Profile Header Clouser
+// MARK:  Header Clousers
 extension ProfileViewController {
+  
+  
+  func setTabsHeaderClousers(header : ProfileTabsCollectionReusableView) {
+    header.didTapGridButton = {[weak self] in
+      print("Grid")
+    }
+    
+    header.didTapTagButton = {[weak self] in
+      print("Tagged")
+    }
+  }
+  
+  
   
   func setProfileHeaderClouser(header: ProfilreCollectioViewHeader) {
     
@@ -182,7 +196,7 @@ extension ProfileViewController {
     }
     header.didTapfollowingButtonClouser = {[weak self] in
       
-      let vc = ListViewController()
+      let vc = ListViewController(data: ["John","Smith"])
       vc.title = "Following"
       vc.navigationItem.largeTitleDisplayMode = .never
       
@@ -194,7 +208,7 @@ extension ProfileViewController {
     }
     header.didTapfollowersButtonClouser = {[weak self] in
       
-      let vc = ListViewController()
+      let vc = ListViewController(data: ["John","Smith"])
       vc.title = "Followers"
       vc.navigationItem.largeTitleDisplayMode = .never
       

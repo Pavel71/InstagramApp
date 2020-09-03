@@ -23,6 +23,7 @@
 		051BC77C24F7C4090066B100 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051BC77B24F7C4090066B100 /* NotificationViewController.swift */; };
 		051BC78124F7C42E0066B100 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051BC78024F7C42E0066B100 /* ProfileViewController.swift */; };
 		051BC78624F7C4520066B100 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051BC78524F7C4520066B100 /* CameraViewController.swift */; };
+		0529438825015C1F00566633 /* UserFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0529438725015C1F00566633 /* UserFollowTableViewCell.swift */; };
 		05959D8C24F7DD1500829881 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05959D8B24F7DD1500829881 /* GoogleService-Info.plist */; };
 		05959D9124F7DE7400829881 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05959D9024F7DE7400829881 /* LoginViewController.swift */; };
 		05959D9324F7DE7F00829881 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05959D9224F7DE7F00829881 /* RegisterViewController.swift */; };
@@ -63,6 +64,7 @@
 		051BC77B24F7C4090066B100 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		051BC78024F7C42E0066B100 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		051BC78524F7C4520066B100 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		0529438725015C1F00566633 /* UserFollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowTableViewCell.swift; sourceTree = "<group>"; };
 		05959D8B24F7DD1500829881 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		05959D9024F7DE7400829881 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		05959D9224F7DE7F00829881 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		050EC7B524FD63BC000E3E9B /* ListViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0529438625015BFF00566633 /* Views */,
 				050EC7B624FD63CD000E3E9B /* ListViewController.swift */,
 			);
 			path = ListViewController;
@@ -350,6 +353,14 @@
 		051BC78424F7C4460066B100 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0529438625015BFF00566633 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0529438725015C1F00566633 /* UserFollowTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -591,6 +602,7 @@
 				05A2CA4D24F9090900863FF8 /* String+Extension.swift in Sources */,
 				05A2CA4524F7E39700863FF8 /* StoragManager.swift in Sources */,
 				05A2CA5224FA6CCC00863FF8 /* IGFeedPostTableViewCell.swift in Sources */,
+				0529438825015C1F00566633 /* UserFollowTableViewCell.swift in Sources */,
 				05A2CA5824FA6E8F00863FF8 /* IGGeneralPostCell.swift in Sources */,
 				05A2CA5424FA6E5200863FF8 /* IGHeaderPostCell.swift in Sources */,
 				051BC78124F7C42E0066B100 /* ProfileViewController.swift in Sources */,
